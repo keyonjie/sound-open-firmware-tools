@@ -16,8 +16,8 @@ include(`local.m4')
 # with 0 sink and 2 source periods
 W_PCM_CAPTURE(Passthrough Capture, PIPELINE_DMAC, PIPELINE_DMAC_CHAN, 0, 2, 2)
 
-# Capture Buffers
-W_BUFFER(0, COMP_BUFFER_SIZE(2,
+# Capture DMA Buffers
+W_BUFFER_DMA(0, COMP_BUFFER_SIZE(2,
 	COMP_SAMPLE_SIZE(PIPELINE_FORMAT), PIPELINE_CHANNELS, SCHEDULE_FRAMES))
 
 #
