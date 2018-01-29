@@ -59,6 +59,28 @@ define(`W_BUFFER',
 `	tokens "sof_buffer_tokens"'
 `	tuples."word" {'
 `		SOF_TKN_BUF_SIZE'	STR($2)
+`		SOF_TKN_BUF_TYPE'	STR(0)
+`	}'
+`}'
+`SectionData."'N_BUFFER($1)`_data" {'
+`	tuples "'N_BUFFER($1)`_tuples"'
+`}'
+`SectionWidget."'N_BUFFER($1)`" {'
+`	index "'PIPELINE_ID`"'
+`	type "buffer"'
+`	no_pm "true"'
+`	data ['
+`		"'N_BUFFER($1)`_data"'
+`	]'
+`}')
+
+dnl W_BUFFER_DMA(name, size)
+define(`W_BUFFER_DMA',
+`SectionVendorTuples."'N_BUFFER($1)`_tuples" {'
+`	tokens "sof_buffer_tokens"'
+`	tuples."word" {'
+`		SOF_TKN_BUF_SIZE'	STR($2)
+`		SOF_TKN_BUF_TYPE'	STR(1)
 `	}'
 `}'
 `SectionData."'N_BUFFER($1)`_data" {'
